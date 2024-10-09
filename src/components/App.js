@@ -85,6 +85,7 @@ export default function App() {
   }, 0);
 
   //?------------EFFECT------------//
+  // "homepaage": "https://AdeebAljerf.github.io/AdeebQuiz",
 
   useEffect(function () {
     async function fetchData() {

@@ -1,0 +1,375 @@
+:root {
+  --color-darkest: #343a40;
+  --color-darkest-1: #3a4045;
+  --color-dark: #495057;
+  --color-medium: #ced4da;
+  --color-light: #f1f3f5;
+
+  --color-theme: #1098ad;
+  --color-accent: #ffa94d;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  color: var(--color-light);
+  background-color: var(--color-darkest);
+}
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.app {
+  width: 60rem;
+  height: 74rem;
+  background-color: var(--color-darkest-1);
+  border-radius: 15px;
+  padding: 4rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 2rem;
+  background-color: #495057;
+  border-radius: 100px;
+}
+
+img {
+  width: 14rem;
+}
+
+h1 {
+  font-family: "Codystar";
+
+  font-size: 6rem;
+  color: var(--color-theme);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-ui {
+  margin-top: 3rem;
+}
+
+.progress {
+  width: 100%;
+  margin-bottom: 4rem;
+  display: grid;
+  justify-content: space-between;
+  gap: 1.2rem;
+  grid-template-columns: auto auto;
+  font-size: 1.8rem;
+  color: var(--color-medium);
+}
+
+progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  grid-column: 1 / -1;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--color-medium);
+  border-radius: 100px;
+}
+::-webkit-progress-value {
+  background-color: var(--color-theme);
+  border-radius: 100px;
+}
+
+.btn {
+  display: block;
+  font-family: inherit;
+  color: inherit;
+  font-size: 2rem;
+  border: 2px solid var(--color-dark);
+  background-color: var(--color-dark);
+  padding: 1.2rem 2.4rem;
+  cursor: pointer;
+  border-radius: 10rem;
+  transition: 0.3s;
+}
+
+.btn:not([disabled]):hover {
+  background-color: var(--color-darkest);
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-option {
+  width: 30rem;
+  text-align: left;
+  background-color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  padding: 1.5rem 2.5rem;
+  cursor: pointer;
+  border-radius: 10rem;
+  transition: 0.3s;
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
+  background-color: var(--color-darkest);
+}
+
+.btn-option.correct {
+  background-color: var(--color-theme);
+  border: 2px solid var(--color-theme);
+  color: var(--color-light);
+}
+
+.btn-option.wrong {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: var(--color-darkest);
+}
+.answer {
+  transform: translateX(2rem);
+}
+
+.result {
+  width: 100%;
+  margin-top: 4rem;
+  background-color: var(--color-theme);
+  color: var(--color-light);
+  border-radius: 100px;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.result span {
+  font-size: 2.2rem;
+  margin-right: 4px;
+}
+
+.highscore {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 1.6rem;
+
+  color: var(--color-medium);
+  font-size: 1.4rem;
+}
+
+.timer {
+  float: left;
+  font-size: 1.8rem;
+  color: var(--color-medium);
+  border: 2px solid var(--color-dark);
+  padding: 1.35rem 2.8rem;
+  border-radius: 100px;
+}
+
+/* CREDIT: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+.loader {
+  width: 50px;
+  height: 24px;
+  background: radial-gradient(circle closest-side, currentColor 90%, #0000) 0%
+      50%,
+    radial-gradient(circle closest-side, currentColor 90%, #0000) 50% 50%,
+    radial-gradient(circle closest-side, currentColor 90%, #0000) 100% 50%;
+  background-size: calc(100% / 3) 12px;
+  background-repeat: no-repeat;
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
+/* ********** */
+/* First counter example */
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 6rem;
+}
+
+.counter * {
+  font-size: inherit;
+  padding: 0.8rem;
+}
+/*? ______________________________MEDIA___________________________ */
+@media screen and (max-width: 50em) {
+  html {
+    font-size: 56.25%; /* Slightly reduce the base font size */
+  }
+
+  .app {
+    height: 70rem;
+    max-width: 50rem; /* Ensure it doesn't get too wide on larger mobile screens */
+    padding: 2rem;
+  }
+
+  .app-header {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 4.8rem; /* Slightly reduce the header size */
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+  .main {
+    width: 100%;
+  }
+
+  .options {
+    gap: 1rem; /* Reduce gap between options */
+  }
+
+  .btn-option {
+    padding: 1rem 1.5rem; /* Reduce padding for options */
+  }
+
+  .progress {
+    font-size: 1.6rem; /* Slightly reduce progress text size */
+  }
+
+  .timer {
+    padding: 1rem 2rem; /* Adjust timer padding */
+  }
+}
+@media screen and (max-width: 31.25em) {
+  html {
+    font-size: 50%; /* Further reduce the base font size */
+  }
+
+  .app {
+    max-width: 40rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 4rem; /* Further reduce the header size */
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 1rem 1.8rem;
+  }
+
+  .options {
+    gap: 2rem; /* Further reduce gap between options */
+  }
+
+  .btn-option {
+    padding: 0.8rem 1.2rem; /* Further reduce padding for options */
+  }
+
+  .progress {
+    font-size: 1.4rem; /* Further reduce progress text size */
+  }
+
+  .timer {
+    padding: 0.8rem 1.6rem; /* Adjust timer padding */
+    font-size: 1.6rem;
+  }
+
+  .result {
+    font-size: 1.8rem;
+    padding: 1.5rem 0;
+  }
+}
